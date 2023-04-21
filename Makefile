@@ -63,8 +63,8 @@ build_mlx:
 	@if ! [ -d "./MLX42" ]; then make install_mlx; fi
 
 install_mlx:
-	git clone https://github.com/codam-coding-college/MLX42.git
-	cd MLX42; cmake -B build; cmake --build build -j4
+	cd ..; git clone https://github.com/codam-coding-college/MLX42.git
+	cd ../MLX42; cmake -B build; cmake --build build -j4
 
 
 # Colors
