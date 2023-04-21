@@ -13,7 +13,7 @@ LIB_DEPS := libmlx42.a libglfw.a
 LIB_DIRS := ../MLX42/build
 
 # Includes
-INC_DIRS := $(wildcard ../../*/) $(wildcard ../../*/) $(wildcard ../../*/*/) $(wildcard ../../*/*/*/) $(wildcard ../../*/*/*/*/) $(wildcard ../../*/*/*/*/*/)
+INC_DIRS := $(wildcard ../*/) $(wildcard ../*/*/) $(wildcard ../*/*/*/) $(wildcard ../*/*/*/*/)
 
 # Directories
 SRC_DIR := src
@@ -60,7 +60,7 @@ print-%:
 	@echo $* = $($*)
 
 build_mlx:
-	@if ! [ -d "../MLX42" ]; then make install_mlx; fi
+	@if ! [ -d "./MLX42" ]; then make install_mlx; fi
 
 install_mlx:
 	cd ..; git clone https://github.com/codam-coding-college/MLX42.git
