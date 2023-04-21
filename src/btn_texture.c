@@ -82,9 +82,9 @@ btn_textures_t *mlx_create_btn_textures(char *deflt,char *highlight,char *presse
     btn_textures_t *tex;
     tex = malloc(sizeof(btn_textures_t));
 
-    tex->tex_def = btn_create_texture(deflt,"./MLX_Module_Button/resources/btn_default.png");
-    tex->tex_hlight = btn_create_texture(highlight,"./MLX_Module_Button/resources/btn_highlight.png");
-    tex->tex_pressed = btn_create_texture(pressed,"./MLX_Module_Button/resources/btn_pressed.png");
+    tex->tex_def = btn_create_texture(deflt,"./Mlx_Module_Button/resources/btn_default.png");
+    tex->tex_hlight = btn_create_texture(highlight,"./Mlx_Module_Button/resources/btn_highlight.png");
+    tex->tex_pressed = btn_create_texture(pressed,"./Mlx_Module_Button/resources/btn_pressed.png");
 
     return (tex);
 }
