@@ -60,7 +60,7 @@ print-%:
 	@echo $* = $($*)
 
 build_mlx:
-	@if ! [ -d "./MLX42" ]; then make install_mlx; fi
+	@if ! [ -d "../MLX42" ]; then make install_mlx; fi
 
 install_mlx:
 	cd ..; git clone https://github.com/codam-coding-college/MLX42.git
