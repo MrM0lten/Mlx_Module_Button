@@ -38,6 +38,7 @@ $(TARGET): $(OBJ)
 
 # Compiler
 $(BLD_DIR)/%.o: %.c
+	@make build_mlx
 	@mkdir -p $(BLD_DIR)
 	@mkdir -p $(@D)
 	@$(CC) -c $(CFLAGS) $< $(E_INC_DIRS) -o $@
@@ -57,6 +58,13 @@ run: $(TARGET)
 
 print-%:
 	@echo $* = $($*)
+
+build_mlx:
+	@if ! [ -d "./MLX42" ]; then make install_mlx; fi
+
+install_mlx:
+	git clone https://github.com/codam-coding-college/MLX42.git
+	cd MLX42; cmake -B build; cmake --build build -j4
 
 
 # Colors
