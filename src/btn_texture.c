@@ -3,6 +3,7 @@
 // --------------- PRIVATE --------------//
 
 
+
 bool mlx_resize_texture(mlx_texture_t* tex, uint32_t nwidth, uint32_t nheight)
 {
 	MLX_NONNULL(tex);

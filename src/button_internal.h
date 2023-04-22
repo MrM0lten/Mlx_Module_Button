@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "MLX42_Int.h"
-#include "MLX42.h"
+#include "../MLX42/include/MLX42/MLX42_Int.h"
+//#include "../MLX42/include/MLX42/MLX42.h"
 
 #define CHARX 10
 #define CHARY 20
