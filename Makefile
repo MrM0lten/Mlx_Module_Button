@@ -30,20 +30,22 @@ E_LIB_DIRS	= $(foreach dir, $(LIB_DIRS), $(addprefix -L./, $(dir)))
 E_LIB_DEPS	:= $(foreach lib, $(LIB_DEPS), $(addprefix -l, $(subst .a, , $(subst lib, , $(lib)))))
 
 # =======BUILD=======
-all: bashscript
+all:
+	@$(MAKE) build_mlx
+	@$(MAKE) compile
 
 compile: $(TARGET)
 
 # Linker
 $(TARGET): $(OBJ)
 	@ar -rcs $(TARGET) $(OBJ)
+	@printf "Building Button library $@: $(GREEN)OK!\n$(DEF_COLOR)"
 
 # Compiler
 $(BLD_DIR)/%.o: %.c
-	@make build_mlx
 	@mkdir -p $(BLD_DIR)
 	@mkdir -p $(@D)
-	$(CC) -c $(CFLAGS) $< $(E_INC_DIRS) -o $@
+	@$(CC) -c $(CFLAGS) $< $(E_INC_DIRS) -o $@
 	@printf "Compiling $@: $(GREEN)OK!\n$(DEF_COLOR)"
 
 reval:
@@ -52,7 +54,6 @@ reval:
 # Commands
 fclean:
 	@rm -rf $(BLD_DIR) $(TARGET)
-	rm -rf ../MLX42
 
 clean:
 	@rm -rf $(BLD_DIR)
@@ -74,16 +75,6 @@ install_mlx:
 
 test:
 	echo $(E_INC_DIRS)
-
-bashscript:
-	@touch run.sh
-	@chmod 777 run.sh
-	@echo make build_mlx > run.sh
-	@echo make compile >> run.sh
-	@./run.sh
-	@rm -f run.sh
-
-
 
 # Colors
 DEF_COLOR	=	\033[0;39m

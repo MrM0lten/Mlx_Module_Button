@@ -2,6 +2,7 @@
 
 // --------------- PRIVATE --------------//
 
+
 void	btn_lstclear(t_btn_list **lst, void (*del)(void *))
 {
 	t_btn_list	*tmp;
